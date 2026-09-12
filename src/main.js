@@ -1,4 +1,5 @@
 import './style.css';
+import { inject } from '@vercel/analytics';
 import * as THREE from 'three';
 import { createWallpaperCanvases, canvasFromFile } from './wallpaper.js';
 
@@ -29,6 +30,8 @@ const hud = document.querySelector('#hud');
 const afterMotion = document.querySelector('#after-motion');
 const landingHint = document.querySelector('#landing-hint');
 const landingActions = document.querySelector('#landing-actions');
+
+inject();
 
 /** Auto hinge: false = left stuck, true = right stuck */
 let hingeOnRight = false;
