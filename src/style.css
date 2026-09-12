@@ -193,9 +193,21 @@ html.is-fullscreen #hud-peek {
   -webkit-backdrop-filter: blur(12px);
 }
 
-#landing-actions {
-  display: contents;
+#landing-actions.landing-start {
+  display: grid;
+  gap: 8px;
 }
 #landing-actions[hidden] {
   display: none !important;
+}
+.start-btn {
+  width: 100%;
+  padding: 16px 18px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 14px;
+}
+#landing-actions .file-btn {
+  justify-self: start;
 }
