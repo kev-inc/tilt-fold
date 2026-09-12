@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/tilt-fold/',
+  // Vercel serves at domain root (tilt-fold.vercel.app).
+  // For GitHub project Pages, set VITE_BASE=/tilt-fold/ at build time.
+  base: process.env.VITE_BASE || '/',
   server: {
     host: true,
     allowedHosts: true,
