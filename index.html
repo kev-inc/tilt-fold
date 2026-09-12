@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#0b0c0f" />
+    <title>Tilt Fold</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div id="viewport"></div>
+
+    <div id="hud-peek">
+      <button type="button" id="show-hud">Controls</button>
+      <button type="button" id="exit-fullscreen">Exit full</button>
+    </div>
+
+    <div id="hud">
+      <header>
+        <strong>Tilt Fold</strong> <small style="color:#9aa0ab;font-weight:500">table-locked UI</small>
+        <span id="status">gyro off</span>
+      </header>
+
+      <div class="row">
+        <span id="landing-actions">
+          <button type="button" id="enable-motion" class="primary">Enable motion</button>
+        </span>
+        <label class="file-btn">
+          Upload wallpaper
+          <input id="upload" type="file" accept="image/*" hidden />
+        </label>
+      </div>
+
+      <div id="after-motion" hidden>
+        <div class="row">
+          <button type="button" id="calibrate">Calibrate flat</button>
+          <button type="button" id="fullscreen">Fullscreen</button>
+        </div>
+
+        <label class="slider-row">
+          <span>Glass lift</span>
+          <input id="angle" type="range" min="0" max="90" value="0" step="0.1" />
+          <span id="angle-label">0°</span>
+        </label>
+
+        <details>
+          <summary>Settings</summary>
+          <label class="slider-row">
+            <span>Sensitivity</span>
+            <input id="sensitivity" type="range" min="0.4" max="2.5" value="0.75" step="0.05" />
+            <span id="sensitivity-label">0.75</span>
+          </label>
+          <label class="check">
+            <input id="invert" type="checkbox" />
+            Invert tilt
+          </label>
+        </details>
+      </div>
+
+      <p class="hint" id="landing-hint">
+        Tap Enable motion, then lay the phone flat and tilt — UI stays table-locked.
+      </p>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
